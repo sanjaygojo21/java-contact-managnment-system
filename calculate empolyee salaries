@@ -1,0 +1,216 @@
+import java.util.Scanner;
+class Employee{
+String empName,empId,address,mailId,mobileNo;
+double basicPay;
+Scanner sc=new Scanner(System.in);
+void readDetails(){
+System.out.print("Enter Employee Name:");
+empName=sc.nextLine();
+System.out.print("Enter employee ID:");
+empId=sc.nextLine();
+System.out.print("Enter Address:");
+address=sc.nextLine();
+System.out.print("Enter Mail ID:");
+mailId=sc.nextLine();
+System.out.print("Enter Mobile no:");
+mobileNo=sc.nextLine();
+System.out.print("Enter Basic Pay:");
+basicPay=sc.nextDouble();
+}
+void displayDetails(){
+System.out.println("\n---EmployeeDetails---");
+System.out.println("Name:"+empName);
+System.out.println("ID:"+empId);
+System.out.println("Address:"+address);
+System.out.println("MailId:"+mailId);
+System.out.println("Mobile No:"+mobileNo);
+System.out.println("BasicPay:"+basicPay);
+}
+}
+class Programmer extends Employee{
+void generatePaySlip(){
+double da=basicPay*97/100;
+double hra=basicPay*10/100;
+double pf=basicPay*12/100;
+double staffClub=basicPay*1/100;
+double gross=basicPay+da+hra;
+double net=gross-(pf+staffClub);
+displayDetails();
+System.out.println("Designation:Programmer");
+System.out.println("DA:"+da);
+System.out.println("HRA:"+hra);
+System.out.println("PF:"+pf);
+System.out.println("Staff Club:"+staffClub);
+System.out.println("Gross Salary:"+gross);
+System.out.println("Net Salary:"+net);
+}
+}
+class Assistant extends Employee{
+void generatePaySlip(){
+double da=basicPay*110/100;
+double hra=basicPay*20/100;
+double pf=basicPay*12/100;
+double staffClub=basicPay*5/100;
+double gross=basicPay+da+hra;
+double net=gross-(pf+staffClub);
+displayDetails();
+System.out.println("Designation:Programmer");
+System.out.println("DA:"+da);
+System.out.println("HRA:"+hra);
+System.out.println("PF:"+pf);
+System.out.println("Staff Club:"+staffClub);
+System.out.println("Gross Salary:"+gross);
+System.out.println("Net Salary:"+net);
+}
+}
+class Associate extends Employee{
+void generatePaySlip(){
+double da=basicPay*130/100;
+double hra=basicPay*30/100;
+double pf=basicPay*12/100;
+double staffClub=basicPay*10/100;
+double gross=basicPay+da+hra;
+double net=gross-(pf+staffClub);
+displayDetails();
+System.out.println("Designation:Programmer");
+System.out.println("DA:"+da);
+System.out.println("HRA:"+hra);
+System.out.println("PF:"+pf);
+System.out.println("Staff Club:"+staffClub);
+System.out.println("Gross Salary:"+gross);
+System.out.println("Net Salary:"+net);
+}
+}
+class Professor extends Employee{
+
+void generatePaySlip(){
+
+double da=basicPay*140/100;
+
+double hra=basicPay*40/100;
+
+double pf=basicPay*12/100;
+
+double staffClub=basicPay*15/100;
+
+double gross=basicPay+da+hra;
+
+double net=gross-(pf+staffClub);
+
+displayDetails();
+
+System.out.println("Designation:Programmer");
+
+System.out.println("DA:"+da);
+
+System.out.println("HRA:"+hra);
+
+System.out.println("PF:"+pf);
+
+System.out.println("Staff Club:"+staffClub);
+
+System.out.println("Gross Salary:"+gross);
+
+System.out.println("Net Salary:"+net);
+
+}
+
+}
+
+public class Employeepayslip {
+
+public static void main(String[]args){
+
+Scanner sc=new Scanner(System.in);
+
+System.out.println("Enter Employee Designation:\n1.Programmer \n2.Assistant professor \n3.Associate professor \n4.Professor");
+
+int choice = sc.nextInt();
+
+sc.nextLine();
+
+switch(choice){
+
+case 1:
+
+Programmer p=new Programmer();
+
+p.readDetails();
+
+p.generatePaySlip();
+
+break;
+
+case 2:
+
+Assistant asp=new Assistant();
+
+asp.readDetails();
+
+asp.generatePaySlip();
+
+break;
+
+case 3:
+
+Associate as=new Associate();
+
+as.readDetails();
+
+as.generatePaySlip();
+
+break;
+
+case 4:
+
+Professor sp=new Professor();
+
+sp.readDetails();
+
+sp.generatePaySlip();
+
+break;
+
+default:
+
+System.out.println("Invalid number");
+
+}
+
+sc.close();
+
+}
+
+}
+
+Output:
+
+Enter Employee Designation:
+1.Programmer
+2.Assistant professor
+3.Associate professor
+4.Professor
+1
+Enter Employee Name:asd
+Enter employee ID:ert
+Enter Address:sdd5
+Enter Mail ID:ass
+Enter Mobile no:3421
+Enter Basic Pay:40000
+
+---EmployeeDetails---
+Name:asd
+ID:ert
+Address:sdd5
+MailId:ass
+Mobile No:3421
+BasicPay:40000.0
+Designation:Programmer
+DA:38800.0
+HRA:4000.0
+PF:4800.0
+Staff Club:400.0
+
+Gross Salary:82800.0
+
+Net Salary:77600.0
